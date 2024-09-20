@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Original content: Beach View</p>
+    <button onclick="updateText()">Click me</button>
+    <br><br><br>
+
+    <img id="image" src='https://tripoventure.com/wp-content/uploads/2022/01/60246742_1097275883792947_7703628834469314560_n-1024x681.jpg'>;
+    <button onclick="changeImage()">Change Image</button>
+    <br><br>
+    <div id="toRemove">This will be removed from the DOM</div>
+    <br>
+</body>
+<script>
+    //  1: Creating and Appending an Element
+    const greetingDiv = document.createElement('div');
+    greetingDiv.textContent = "Hello, World!";
+    document.body.appendChild(greetingDiv);
+
+    // 2: Changing the Content of an Existing Element
+    function updateText() {
+        document.getElementById('text').textContent = "Updated content: Awesome Look";
+    }
+
+    // 3: Creating and Appending a List of Items
+    const ul = document.createElement('ul');
+    const items = ['Item A', 'Item B', 'Item C','Item D'];
+
+    items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        ul.appendChild(li);
+    });
+    document.body.appendChild(ul);
+
+    //  4: Editing an Attribute of an Element
+    function changeImage() {
+        const img = document.getElementById('image');
+        img.src ='https://framedventures.com/wp-content/uploads/2022/04/haritha-resorts-araku-valley-1024x512.jpg'
+    }
+
+    //  5: Deleting an Element
+    const elementToRemove = document.getElementById('toRemove');
+    elementToRemove.remove();
+</script>
+</html>
